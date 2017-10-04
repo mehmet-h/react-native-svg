@@ -6,6 +6,9 @@
 `react-native-svg` is built to provide a SVG interface to react native on both iOS and Android.
 
 [Check out the demo](https://getexponent.com/@rncommunity/react-native-svg-examples).
+## Differances from 5.1.8
+1. elements/svg.js
+View.Proptypes to ViewPropTypes
 
 ## Features
 
@@ -16,35 +19,37 @@
 
 #### Automatic
 
-*With Exponent, this is pre-installed. Jump ahead to [Usage](#Usage)*
+*With Expo, this is pre-installed. Jump ahead to [Usage](#Usage)*
 
 1. Install library from `npm`
 
     ```bash
     npm install react-native-svg --save
     ```
-    
+
     # NOTICE:
-    
+
     - react-native-svg >= 3.2.0 only supports react-native >= 0.29.0
     - react-native-svg >= 4.2.0 only supports react-native >= 0.32.0
     - react-native-svg >= 4.3.0 only supports react-native >= 0.33.0
     - react-native-svg >= 4.4.0 only supports react-native >= 0.38.0 and react >= 15.4.0
     - react-native-svg >= 4.5.0 only supports react-native >= 0.40.0 and react >= 15.4.0
-    
+    - react-native-svg >= 5.1.8 only supports react-native >= 0.44.0 and react == 16.0.0-alpha.6
+    - react-native-svg >= 5.2.0 only supports react-native >= 0.45.0 and react == 16.0.0-alpha.12
+    - react-native-svg >= 5.3.0 only supports react-native >= 0.46.0 and react == 16.0.0-alpha.12
+
 2. Link native code
 
     ```bash
     react-native link react-native-svg
     ```
-    react-native@0.29.0 and 0.29.1 cannot work with Android link properly:[here](https://github.com/facebook/react-native/pull/8612)
 
     Or use `rnpm` instead:
 
     ```bash
     rnpm link react-native-svg
     ```
-    
+
 #### Manual
 
 ##### Android
@@ -57,7 +62,7 @@
 	include ':react-native-svg'
 	project(':react-native-svg').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-svg/android')
 	```
-    
+
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
 
 	```
@@ -67,13 +72,13 @@
 4. Open up `android/app/src/main/java/[...]/MainApplication.java
   - Add `import com.horcrux.svg.SvgPackage;` to the imports at the top of the file
   - Add `new SvgPackage()` to the list returned by the `getPackages()` method. Add a comma to the previous item if there's already something there.
-  
+
 
 ### <a name="Usage">Usage</a>
 
 Here's a simple example. To render output like this:
 
-![SVG example](./screenShoots/svg.png)
+![SVG example](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/svg.png)
 
 Use the following code:
 
@@ -125,6 +130,8 @@ class SvgExample extends Component {
     }
 }
 ```
+
+[Try this on Snack](https://snack.expo.io/r1hCVAaEZ)
 
 ### Common props:
 
@@ -187,7 +194,7 @@ The <Rect> element is used to create a rectangle and variations of a rectangle s
 </Svg>
 ```
 
-![Rect](./screenShoots/rect.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/rect.png)
 
   Code explanation:
 
@@ -213,7 +220,7 @@ The <Circle> element is used to create a circle:
 </Svg>
 ```
 
-![Rect](./screenShoots/circle.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/circle.png)
 
   Code explanation:
 
@@ -242,7 +249,7 @@ An ellipse is closely related to a circle. The difference is that an ellipse has
     />
 </Svg>
 ```
-![Rect](./screenShoots/ellipse.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/ellipse.png)
 
 Code explanation:
 
@@ -271,7 +278,7 @@ The <Line> element is an SVG basic shape, used to create a line connecting two p
 </Svg>
 ```
 
-![Rect](./screenShoots/line.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/line.png)
 
 Code explanation:
 
@@ -298,7 +305,7 @@ The <Polygon> element is used to create a graphic that contains at least three s
 </Svg>
 ```
 
-![Rect](./screenShoots/polygon.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/polygon.png)
 
 Code explanation:
 
@@ -322,7 +329,7 @@ The <Polyline> element is used to create any shape that consists of only straigh
 </Svg>
 ```
 
-![Rect](./screenShoots/polyline.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/polyline.png)
 
 Code explanation:
 
@@ -360,7 +367,7 @@ The following commands are available for path data:
 </Svg>
 ```
 
-![Rect](./screenShoots/path.png)
+![Rect](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/path.png)
 
 
 #### Text
@@ -384,7 +391,7 @@ The <Text> element is used to define text.
 </Svg>
 ```
 
-![Text](./screenShoots/text.png)
+![Text](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/text.png)
 
 #### TSpan
 
@@ -412,7 +419,7 @@ The <TSpan> element is used to draw multiple lines of text in SVG. Rather than h
 </Svg>
 ```
 
-![TSpan](./screenShoots/tspan.png)
+![TSpan](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/tspan.png)
 
 #### TextPath
 
@@ -449,7 +456,7 @@ In addition to text drawn in a straight line, SVG also includes the ability to p
 </Svg>
 ```
 
-![TextPath](./screenShoots/text-path.png)
+![TextPath](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/text-path.png)
 
 #### G
 
@@ -492,7 +499,7 @@ The <G> element is a container used to group other SVG elements. Transformations
     </G>
 </Svg>
 ```
-![G](./screenShoots/g.png)
+![G](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/g.png)
 
 #### Use
 
@@ -523,7 +530,7 @@ Before the <G> element can be referenced, it must have an ID set on it via its i
 
 The <Use> element specifies where to show the reused shapes via its x and y props. Notice that the shapes inside the <G> element are located at 0,0. That is done because their position is added to the position specified in the <Use> element.
 
-![use](./screenShoots/use.png)
+![use](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/use.png)
 
 
 #### Symbol
@@ -535,7 +542,7 @@ The SVG <Symbol> element is used to define reusable symbols. The shapes nested i
     height="150"
     width="110"
 >
-    <Symbol id="symbol" viewbox="0 0 150 110" width="100" height="50">
+    <Symbol id="symbol" viewBox="0 0 150 110" width="100" height="50">
         <Circle cx="50" cy="50" r="40" strokeWidth="8" stroke="red" fill="red"/>
         <Circle cx="90" cy="60" r="40" strokeWidth="8" stroke="green" fill="white"/>
     </Symbol>
@@ -562,7 +569,7 @@ The SVG <Symbol> element is used to define reusable symbols. The shapes nested i
 </Svg>
 ```
 
-![Symbol](./screenShoots/symbol.png)
+![Symbol](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/symbol.png)
 
 #### Defs
 
@@ -617,7 +624,7 @@ The <Image> element allows a raster image to be included in an Svg componenet.
 </Svg>
 ```
 
-![Image](./screenShoots/image.png)
+![Image](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/image.png)
 
 #### ClipPath
 
@@ -669,7 +676,7 @@ The <ClipPath> SVG element defines a clipping path. A clipping path is used/refe
 </Svg>
 ```
 
-![ClipPath](./screenShoots/clip-path.png)
+![ClipPath](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/clip-path.png)
 
 #### LinearGradient
 
@@ -704,7 +711,7 @@ Code explanation:
   * The color range for a gradient can be composed of two or more colors. Each color is specified with a <Stop> tag. The offset prop is used to define where the gradient color begin and end
   * The fill prop links the ellipse element to the gradient
 
-![LinearGradient](./screenShoots/lineargradient.png)
+![LinearGradient](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/lineargradient.png)
 
 *NOTICE:*
 LinearGradient also supports percentage as prop:
@@ -750,7 +757,7 @@ Code explanation:
   * The color range for a gradient can be composed of two or more colors. Each color is specified with a <stop> tag. The offset prop is used to define where the gradient color begin and end
   * The fill prop links the ellipse element to the gradient
 
-![RadialGradient](./screenShoots/radialgradient.png)
+![RadialGradient](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/radialgradient.png)
 
 #### Touch Events
 
@@ -777,9 +784,9 @@ You can use these events to provide interactivity to your react-native-svg compo
 />
 ```
 
-![TouchEvents](./screenShoots/touchevents.gif)
+![TouchEvents](https://raw.githubusercontent.com/react-native-community/react-native-svg/master/screenShoots/touchevents.gif)
 
-For more examples of touch in action, checkout the [TouchEvents.js examples](Example/examples/TouchEvents.js).
+For more examples of touch in action, checkout the [TouchEvents.js examples](https://github.com/magicismight/react-native-svg-example/blob/master/examples/TouchEvents.js).
 
 ### Run example:
 
